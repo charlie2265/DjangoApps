@@ -1,0 +1,19 @@
+
+<doctype html>
+    <head>
+        <title>My Polls page</title>
+    </head>
+    <body>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+            <!-- Template tag -->
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </body>
+
+</doctype>
